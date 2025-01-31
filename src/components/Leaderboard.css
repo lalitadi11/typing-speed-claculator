@@ -1,0 +1,212 @@
+.leaderboard-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.leaderboard-header {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  border: 1px solid var(--border);
+}
+
+.leaderboard-header h2 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2.5rem;
+  margin: 0 0 1rem;
+}
+
+.time-filter {
+  margin-top: 1rem;
+}
+
+.royal-select {
+  padding: 0.75rem 2rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--background);
+  color: var(--text);
+  font-family: 'Cinzel', serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+.royal-select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--shadow);
+}
+
+.leaderboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.leaderboard-entry {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.leaderboard-entry:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.leaderboard-entry.current-user {
+  border: 2px solid var(--primary);
+  background: linear-gradient(
+    to right,
+    var(--card-bg),
+    var(--card-bg-hover)
+  );
+}
+
+.leaderboard-entry.top-three {
+  background: linear-gradient(
+    to right,
+    var(--card-bg),
+    var(--card-bg-accent)
+  );
+}
+
+.rank {
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 60px;
+  text-align: center;
+  color: var(--primary);
+}
+
+.user-info {
+  flex: 1;
+  margin: 0 1rem;
+}
+
+.username {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.stats {
+  display: flex;
+  gap: 1rem;
+  color: var(--text-secondary);
+}
+
+.wpm {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.accuracy {
+  color: var(--text-secondary);
+}
+
+.achievements {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.achievement-icon {
+  font-size: 1.5rem;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  cursor: help;
+}
+
+.achievement-icon:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.no-entries {
+  text-align: center;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: 'Cinzel', serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .leaderboard-container {
+    margin: 1rem;
+    padding: 0;
+  }
+
+  .leaderboard-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .leaderboard-entry {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .rank {
+    width: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  .user-info {
+    margin: 0;
+  }
+
+  .stats {
+    justify-content: center;
+  }
+
+  .achievements {
+    margin: 0;
+    justify-content: center;
+  }
+}
+
+/* Animations */
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.top-three .username {
+  background: linear-gradient(
+    90deg,
+    var(--primary) 0%,
+    var(--primary-light) 25%,
+    var(--primary) 50%,
+    var(--primary-light) 75%,
+    var(--primary) 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 8s linear infinite;
+}

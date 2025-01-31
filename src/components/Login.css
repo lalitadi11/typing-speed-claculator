@@ -1,0 +1,171 @@
+.login-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.login-content {
+  position: relative;
+}
+
+.login-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2rem;
+  position: relative;
+}
+
+.login-title::before,
+.login-title::after {
+  content: "♔";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.login-title::before {
+  left: 1rem;
+}
+
+.login-title::after {
+  right: 1rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  color: var(--text);
+  font-family: 'Cinzel', serif;
+  font-weight: 500;
+}
+
+.royal-input {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--background);
+  color: var(--text);
+  font-family: 'Cinzel', serif;
+  transition: all 0.3s ease;
+}
+
+.royal-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--shadow);
+}
+
+.royal-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.login-button {
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: white;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.login-button:disabled {
+  background: var(--disabled);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.error-message {
+  color: var(--error);
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background: rgba(220, 20, 60, 0.1);
+  border: 1px solid var(--error);
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--text-secondary);
+  font-family: 'Cinzel', serif;
+}
+
+.royal-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.royal-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Royal decorative elements */
+.login-container::before,
+.login-container::after {
+  content: "❧";
+  position: absolute;
+  font-size: 1.5rem;
+  color: var(--primary);
+  opacity: 0.5;
+}
+
+.login-container::before {
+  top: 1rem;
+  left: 1rem;
+  transform: rotate(-45deg);
+}
+
+.login-container::after {
+  bottom: 1rem;
+  right: 1rem;
+  transform: rotate(135deg);
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .login-title {
+    font-size: 1.5rem;
+  }
+
+  .login-title::before,
+  .login-title::after,
+  .login-container::before,
+  .login-container::after {
+    display: none;
+  }
+}
